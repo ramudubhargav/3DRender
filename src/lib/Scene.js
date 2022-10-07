@@ -34,14 +34,6 @@ export default class Test {
     this.light.position.set(0, 1, 0);
     this.scene.add(this.light);
 
-    /*this.mesh = new THREE.Mesh(
-      new THREE.PlaneGeometry(3000, 3000),
-      new THREE.MeshPhongMaterial({ color: 0x999999, depthWrite: false })
-    );
-
-    //this.mesh.rotation.x = - Math.PI / 2;
-    this.mesh.receiveShadow = true;
-    this.scene.add(this.mesh);*/
     const grid = new THREE.GridHelper(200, 20, 0x000000, 0x000000);
     grid.material.opacity = 0.2;
     grid.material.transparent = true;
@@ -58,11 +50,8 @@ export default class Test {
     this.stats = Stats();
     document.body.appendChild(this.stats.dom);
     window.addEventListener("resize", () => this.onWindowResize(), false);
-    //const hemisphereLightFolder = gui.addFolder('THREE.HemisphereLight');
   }
   animate() {
-    // NOTE: Window is implied.
-    // requestAnimationFrame(this.animate.bind(this));
     window.requestAnimationFrame(this.animate.bind(this));
     this.render();
     this.stats.update();
@@ -71,8 +60,6 @@ export default class Test {
   }
 
   render() {
-    // NOTE: Update uniform data on each render.
-    // this.uniforms.u_time.value += this.clock.getDelta();
     this.renderer.render(this.scene, this.camera);
   }
 
