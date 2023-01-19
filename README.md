@@ -12,5 +12,3 @@ Create a react app to render 3D models using threejs
 @react-scripts 
 @three 
 
-# Deployment  
-https://csb-vcimem.netlify.app/ 
